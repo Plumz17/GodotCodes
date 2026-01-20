@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxjtiy38l6rj"]
+
+[ext_resource type="Texture2D" uid="uid://bwp7lbfjmekds" path="res://Assets/Sprite-0001.png" id="1_pg40h"]
+[ext_resource type="FontFile" uid="uid://de2wc6g8tkyg3" path="res://Assets/BoldPixels.otf" id="2_5sm3h"]
+[ext_resource type="Script" uid="uid://bd10mdr5wtqk6" path="res://button.gd" id="2_q21lg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q21lg"]
+font = ExtResource("2_5sm3h")
+font_size = 32
+font_color = Color(0.40784314, 0.28627452, 0.44313726, 1)
+
+[node name="button" type="Control"]
+custom_minimum_size = Vector2(352, 64)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(176, 32)
+size_flags_horizontal = 0
+script = ExtResource("2_q21lg")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 64.0
+texture_normal = ExtResource("1_pg40h")
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.0
+offset_top = -16.0
+offset_right = 51.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Testing"
+label_settings = SubResource("LabelSettings_q21lg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]

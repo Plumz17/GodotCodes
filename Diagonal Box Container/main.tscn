@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://hy7uxsv7yjfo"]
+
+[ext_resource type="Script" uid="uid://rcg22sdxunm5" path="res://main.gd" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://c8cifne2a8c8a" path="res://DiagonalContainer.gd" id="2_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dxjtiy38l6rj" path="res://button.tscn" id="3_7mycd"]
+[ext_resource type="AudioStream" uid="uid://dyn5mj4n4fhuh" path="res://Assets/Minimalist1.wav" id="4_272bh"]
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1bvp3")
+
+[node name="DiagonalContainer" type="Container" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+script = ExtResource("2_lquwl")
+x_dev = -15.0
+y_dev = 64.0
+metadata/_custom_type_script = "uid://c8cifne2a8c8a"
+
+[node name="buttons" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="buttons2" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="buttons3" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="buttons4" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="buttons5" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="buttons6" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="buttons7" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="buttons8" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+layout_mode = 2
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_272bh")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="finished" from="Sound" to="." method="_on_sound_finished"]
