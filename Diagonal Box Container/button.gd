@@ -1,4 +1,5 @@
 extends Control
+class_name GameButton
 
 @export var text: String = "Test"
 @onready var label: Label = $TextureButton/Label
@@ -23,9 +24,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_texture_button_mouse_entered() -> void:
-	tween_button_entered()
-	SignalHub.emit_on_button_hover()
+
 
 func tween_button_entered() -> void:
 	if tween:
@@ -46,9 +45,17 @@ func tween_button_exitted() -> void:
 	tween.set_parallel(false)
 	z_index = 0
 
-func _on_texture_button_mouse_exited() -> void:
-	tween_button_exitted()
-
 
 func _on_texture_button_focus_entered() -> void:
 	tween_button_entered()
+	SignalHub.emit_on_button_hover()
+
+
+func _on_texture_button_focus_exited() -> void:
+	tween_button_exitted()
+
+func _on_texture_button_mouse_entered() -> void:
+	grab_button_focus()
+
+func grab_button_focus() -> void:
+	texture_button.grab_focus()

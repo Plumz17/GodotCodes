@@ -25,28 +25,22 @@ x_dev = -15.0
 y_dev = 64.0
 metadata/_custom_type_script = "uid://c8cifne2a8c8a"
 
-[node name="buttons" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+[node name="button" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
 layout_mode = 2
 
-[node name="buttons2" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+[node name="button2" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
 layout_mode = 2
 
-[node name="buttons3" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+[node name="button3" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
 layout_mode = 2
 
-[node name="buttons4" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+[node name="button4" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
 layout_mode = 2
 
-[node name="buttons5" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+[node name="button5" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
 layout_mode = 2
 
-[node name="buttons6" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
-layout_mode = 2
-
-[node name="buttons7" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
-layout_mode = 2
-
-[node name="buttons8" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
+[node name="button6" parent="DiagonalContainer" instance=ExtResource("3_7mycd")]
 layout_mode = 2
 
 [node name="Sound" type="AudioStreamPlayer2D" parent="."]
