@@ -37,7 +37,8 @@ func _physics_process(delta: float) -> void:
 	handle_flip()
 	handle_anim()
 	
-	velocity.y = clampf(velocity.y, jump_velocity, terminal_velocity)
+	if velocity.y > terminal_velocity:
+		velocity.y = terminal_velocity
 	move_and_slide()
 
 func handle_fall(delta: float) -> void:
