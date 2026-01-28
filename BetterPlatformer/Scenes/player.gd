@@ -60,6 +60,7 @@ func handle_jump() -> void:
 	if is_on_floor():
 		if buffer_jump:
 			jump()
+			buffer_timer.stop()
 			buffer_jump = false
 
 func handle_movement() -> void:
