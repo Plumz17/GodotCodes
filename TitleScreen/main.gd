@@ -3,7 +3,8 @@ extends Control
 @export var pitch_step: float = 0.1
 @export var pitch_base: float = 1.0
 @export var pitch_max: float = 1.5
-@onready var sound: AudioStreamPlayer2D = $Sound
+@onready var hover_sound: AudioStreamPlayer2D = $HoverSound
+@onready var click_sound: AudioStreamPlayer2D = $ClickSound
 @onready var diagonal_container: DiagonalContainer = $ButtonsContainer/DiagonalContainer
 @onready var circular_container: CircularContainer = $CreditsContainer/CircularContainer
 @onready var logo_container: MarginContainer = $LogoContainer
@@ -33,12 +34,13 @@ func _ready() -> void:
 
 func on_button_hover() -> void:
 	pitch = min(pitch + pitch_step, pitch_max)
-	if sound.playing == false:
+	if hover_sound.playing == false:
 		pitch = pitch_base
-	sound.pitch_scale = pitch
-	sound.play()
+	hover_sound.pitch_scale = pitch
+	hover_sound.play()
 	
 func on_button_pressed(action_id: String) -> void:
+	click_sound.play()
 	match action_id:
 		"start":
 			start_game()
@@ -57,3 +59,7 @@ func load_credits(b: bool) -> void:
 	buttons_container.visible = !b
 	credits_container.visible = b
 	back_container.visible = b
+	if b and circular_container.get_child_count() > 0:
+		circular_container.get_child(0).grab_button_focus()
+	if !b and diagonal_container.get_child_count() > 0:
+		diagonal_container.get_child(0).grab_button_focus()

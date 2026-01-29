@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://c3f7oqkhjogu5" path="res://circular_container.gd" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://cre0oulk8uhb1" path="res://button2.png" id="9_kek77"]
 [ext_resource type="Texture2D" uid="uid://devfqd20e8jmv" path="res://back.png" id="10_4c57u"]
+[ext_resource type="AudioStream" uid="uid://dyvv8ygx7dpjx" path="res://Assets/Minimalist10.wav" id="11_efxa6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
 font = ExtResource("4_lquwl")
@@ -26,7 +27,6 @@ grow_vertical = 2
 script = ExtResource("1_lquwl")
 
 [node name="LogoContainer" type="MarginContainer" parent="." unique_id=77251829]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -58,7 +58,6 @@ size_flags_vertical = 4
 texture = ExtResource("1_h2yge")
 
 [node name="ButtonsContainer" type="MarginContainer" parent="." unique_id=1268964612]
-visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -201,6 +200,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CreditsContainer" type="MarginContainer" parent="." unique_id=1191698454]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -218,39 +218,38 @@ y_dev = 30.0
 x_dev = 24.0
 metadata/_custom_type_script = "uid://c3f7oqkhjogu5"
 
-[node name="Button1" type="Control" parent="CreditsContainer/CircularContainer" unique_id=2122909554]
+[node name="Button1" type="Control" parent="CreditsContainer/CircularContainer" unique_id=452544425]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
-move_length = Vector2(0, 0)
 scale_size = Vector2(1.25, 1.25)
 
-[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button1" unique_id=1433149875]
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button1" unique_id=614787755]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -15.0
-offset_right = 157.5
-offset_bottom = 15.0
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("9_kek77")
 
-[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button1/TextureButton" unique_id=557979932]
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button1/TextureButton" unique_id=703723602]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -64.5
 offset_top = -11.5
-offset_right = 20.0
+offset_right = 64.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -259,39 +258,38 @@ label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button2" type="Control" parent="CreditsContainer/CircularContainer" unique_id=1963974376]
+[node name="Button2" type="Control" parent="CreditsContainer/CircularContainer" unique_id=1741132439]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
-move_length = Vector2(0, 0)
 scale_size = Vector2(1.25, 1.25)
 
-[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button2" unique_id=1095942084]
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button2" unique_id=1041185457]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -15.0
-offset_right = 157.5
-offset_bottom = 15.0
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("9_kek77")
 
-[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button2/TextureButton" unique_id=269160168]
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button2/TextureButton" unique_id=240208391]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -82.0
 offset_top = -11.5
-offset_right = 20.0
+offset_right = 82.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -300,39 +298,38 @@ label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button3" type="Control" parent="CreditsContainer/CircularContainer" unique_id=198485611]
+[node name="Button3" type="Control" parent="CreditsContainer/CircularContainer" unique_id=2131591819]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
-move_length = Vector2(0, 0)
 scale_size = Vector2(1.25, 1.25)
 
-[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button3" unique_id=1095190328]
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button3" unique_id=31568496]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -15.0
-offset_right = 157.5
-offset_bottom = 15.0
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("9_kek77")
 
-[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button3/TextureButton" unique_id=1735699849]
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button3/TextureButton" unique_id=1786010585]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -108.0
 offset_top = -11.5
-offset_right = 20.0
+offset_right = 108.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -341,39 +338,38 @@ label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button4" type="Control" parent="CreditsContainer/CircularContainer" unique_id=805445858]
+[node name="Button4" type="Control" parent="CreditsContainer/CircularContainer" unique_id=1190671199]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
-move_length = Vector2(0, 0)
 scale_size = Vector2(1.25, 1.25)
 
-[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button4" unique_id=751293305]
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button4" unique_id=814079946]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -15.0
-offset_right = 157.5
-offset_bottom = 15.0
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("9_kek77")
 
-[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button4/TextureButton" unique_id=1537129776]
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button4/TextureButton" unique_id=526613250]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -91.5
 offset_top = -11.5
-offset_right = 20.0
+offset_right = 91.5
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -382,48 +378,48 @@ label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button5" type="Control" parent="CreditsContainer/CircularContainer" unique_id=1657478894]
+[node name="Button5" type="Control" parent="CreditsContainer/CircularContainer" unique_id=333880233]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
-move_length = Vector2(0, 0)
 scale_size = Vector2(1.25, 1.25)
 
-[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button5" unique_id=1764194546]
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button5" unique_id=1300585708]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -157.5
-offset_top = -15.0
-offset_right = 157.5
-offset_bottom = 15.0
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("9_kek77")
 
-[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button5/TextureButton" unique_id=1601908424]
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button5/TextureButton" unique_id=2034722144]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
+offset_left = -112.0
 offset_top = -11.5
-offset_right = 20.0
+offset_right = 112.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = " Rafael Arthur Immanuel Hady"
+text = "Rafael Arthur Immanuel Hady"
 label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackContainer" type="MarginContainer" parent="." unique_id=1455791816]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -458,8 +454,11 @@ grow_vertical = 2
 pivot_offset = Vector2(35, 35)
 texture_normal = ExtResource("10_4c57u")
 
-[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=848385977]
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="." unique_id=848385977]
 stream = ExtResource("7_272bh")
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="." unique_id=1646624438]
+stream = ExtResource("11_efxa6")
 
 [connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_entered"]
 [connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_exited"]
