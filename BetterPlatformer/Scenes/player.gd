@@ -31,7 +31,6 @@ func _ready() -> void:
 	buffer_timer.wait_time = jump_buffer_time
 	coyote_timer.wait_time = coyote_time
 	current_gravity = default_gravity
-	Engine.time_scale = 0.2
 
 func _physics_process(delta: float) -> void:
 	update_debug_label()
@@ -43,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	
 	if velocity.y > terminal_velocity:
 		velocity.y = terminal_velocity
+	
 	move_and_slide()
 
 func handle_fall(delta: float) -> void:
