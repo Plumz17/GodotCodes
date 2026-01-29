@@ -190,6 +190,7 @@ autoplay = "idle"
 frame_progress = 0.11532226
 
 [node name="BufferTimer" type="Timer" parent="." unique_id=1398723664]
+one_shot = true
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=277171519]
 one_shot = true
@@ -205,4 +206,5 @@ text = "test"
 label_settings = SubResource("LabelSettings_cvnsp")
 horizontal_alignment = 1
 
+[connection signal="timeout" from="BufferTimer" to="." method="_on_buffer_timer_timeout"]
 [connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]

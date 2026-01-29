@@ -58,10 +58,16 @@ func handle_fall(delta: float) -> void:
 		jump_available = true
 		current_gravity = default_gravity
 		coyote_timer.stop()
+		if jump_buffer and !buffer_timer.is_stopped():
+			jump()
 
 func handle_jump() -> void:
-	if Input.is_action_just_pressed("jump") and jump_available:
-		jump()
+	if Input.is_action_just_pressed("jump"):
+		if jump_available:
+			jump()
+		else:
+			jump_buffer = true
+			buffer_timer.start()
 
 func handle_movement() -> void:
 	var direction := Input.get_axis("left", "right")
@@ -95,3 +101,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_coyote_timer_timeout() -> void:
 	jump_available = false
+
+
+func _on_buffer_timer_timeout() -> void:
+	jump_buffer = false
