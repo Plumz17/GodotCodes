@@ -26,6 +26,7 @@ grow_vertical = 2
 script = ExtResource("1_lquwl")
 
 [node name="LogoContainer" type="MarginContainer" parent="." unique_id=77251829]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -57,6 +58,7 @@ size_flags_vertical = 4
 texture = ExtResource("1_h2yge")
 
 [node name="ButtonsContainer" type="MarginContainer" parent="." unique_id=1268964612]
+visible = false
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -81,6 +83,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 action_id = "start"
+scale_size = Vector2(2, 2)
 
 [node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button1" unique_id=1574941582]
 layout_mode = 1
@@ -121,6 +124,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 action_id = "credits"
+scale_size = Vector2(2, 2)
 
 [node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button2" unique_id=1560861398]
 layout_mode = 1
@@ -161,6 +165,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 action_id = "exit"
+scale_size = Vector2(2, 2)
 
 [node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button3" unique_id=610171167]
 layout_mode = 1
@@ -196,7 +201,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="CreditsContainer" type="MarginContainer" parent="." unique_id=1191698454]
-visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -420,7 +424,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackContainer" type="MarginContainer" parent="." unique_id=1455791816]
-visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
