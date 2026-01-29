@@ -220,6 +220,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 move_length = Vector2(0, 0)
+scale_size = Vector2(1.25, 1.25)
 
 [node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button1" unique_id=1433149875]
 layout_mode = 1
@@ -249,7 +250,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Game"
+text = "Ryan Ethan Halim"
 label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -260,6 +261,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 move_length = Vector2(0, 0)
+scale_size = Vector2(1.25, 1.25)
 
 [node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button2" unique_id=1095942084]
 layout_mode = 1
@@ -289,7 +291,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Game"
+text = "Anders Emmanuel Tan"
 label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -300,6 +302,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 move_length = Vector2(0, 0)
+scale_size = Vector2(1.25, 1.25)
 
 [node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button3" unique_id=1095190328]
 layout_mode = 1
@@ -329,7 +332,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Game"
+text = "Thomas Nadandra Aryawida"
 label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -340,6 +343,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 move_length = Vector2(0, 0)
+scale_size = Vector2(1.25, 1.25)
 
 [node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button4" unique_id=751293305]
 layout_mode = 1
@@ -369,7 +373,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Game"
+text = "Matthew Harry Indriadi"
 label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -380,6 +384,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("4_7mycd")
 move_length = Vector2(0, 0)
+scale_size = Vector2(1.25, 1.25)
 
 [node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button5" unique_id=1764194546]
 layout_mode = 1
@@ -409,7 +414,7 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-text = "Start Game"
+text = " Rafael Arthur Immanuel Hady"
 label_settings = SubResource("LabelSettings_7mycd")
 horizontal_alignment = 1
 vertical_alignment = 1
