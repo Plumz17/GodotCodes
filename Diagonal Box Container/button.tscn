@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxjtiy38l6rj"]
+[gd_scene format=3 uid="uid://dxjtiy38l6rj"]
 
 [ext_resource type="Texture2D" uid="uid://bwp7lbfjmekds" path="res://Assets/Sprite-0001.png" id="1_pg40h"]
 [ext_resource type="FontFile" uid="uid://de2wc6g8tkyg3" path="res://Assets/BoldPixels.otf" id="2_5sm3h"]
@@ -9,7 +9,7 @@ font = ExtResource("2_5sm3h")
 font_size = 32
 font_color = Color(0.40784314, 0.28627452, 0.44313726, 1)
 
-[node name="button" type="Control"]
+[node name="button" type="Control" unique_id=991178057]
 custom_minimum_size = Vector2(352, 64)
 layout_mode = 3
 anchors_preset = 8
@@ -23,13 +23,13 @@ pivot_offset = Vector2(176, 32)
 size_flags_horizontal = 0
 script = ExtResource("2_q21lg")
 
-[node name="TextureButton" type="TextureButton" parent="."]
+[node name="TextureButton" type="TextureButton" parent="." unique_id=773883431]
 layout_mode = 0
 offset_right = 352.0
 offset_bottom = 64.0
 texture_normal = ExtResource("1_pg40h")
 
-[node name="Label" type="Label" parent="TextureButton"]
+[node name="Label" type="Label" parent="TextureButton" unique_id=1216067702]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

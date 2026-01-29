@@ -1,0 +1,491 @@
+[gd_scene format=3 uid="uid://cfbb8xsl0payk"]
+
+[ext_resource type="Texture2D" uid="uid://drdgkeqod5om8" path="res://icon.svg" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://dbxg2gmk1uvyr" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://c3wgfrhtq6vbq" path="res://button.png" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://d061ndpqwyuxg" path="res://diagonal_container.gd" id="3_272bh"]
+[ext_resource type="Script" uid="uid://inyvjmd7p16a" path="res://button.gd" id="4_7mycd"]
+[ext_resource type="FontFile" uid="uid://e8ull3lvhllw" path="res://easvhs.ttf" id="4_lquwl"]
+[ext_resource type="AudioStream" uid="uid://g6ry07akvvvd" path="res://Assets/Minimalist1.wav" id="7_272bh"]
+[ext_resource type="Script" uid="uid://c3f7oqkhjogu5" path="res://circular_container.gd" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://cre0oulk8uhb1" path="res://button2.png" id="9_kek77"]
+[ext_resource type="Texture2D" uid="uid://devfqd20e8jmv" path="res://back.png" id="10_4c57u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font = ExtResource("4_lquwl")
+font_size = 17
+font_color = Color(0.3647059, 0.1254902, 0.2784314, 1)
+
+[node name="main" type="Control" unique_id=1783092781]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lquwl")
+
+[node name="LogoContainer" type="MarginContainer" parent="." unique_id=77251829]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+
+[node name="Logo" type="Control" parent="LogoContainer" unique_id=248550181]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LogoContainer/Logo" unique_id=1329524156]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_h2yge")
+
+[node name="ButtonsContainer" type="MarginContainer" parent="." unique_id=1268964612]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 200.0
+grow_vertical = 0
+theme_override_constants/margin_left = 88
+theme_override_constants/margin_top = 100
+
+[node name="DiagonalContainer" type="Container" parent="ButtonsContainer" unique_id=377744276]
+layout_mode = 2
+script = ExtResource("3_272bh")
+y_dev = 30.0
+x_dev = 15.0
+x_gap_dev = 0.0
+metadata/_custom_type_script = "uid://d061ndpqwyuxg"
+
+[node name="Button1" type="Control" parent="ButtonsContainer/DiagonalContainer" unique_id=1023113586]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+action_id = "start"
+
+[node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button1" unique_id=1574941582]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="ButtonsContainer/DiagonalContainer/Button1/TextureButton" unique_id=371819917]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Control" parent="ButtonsContainer/DiagonalContainer" unique_id=564501334]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+action_id = "credits"
+
+[node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button2" unique_id=1560861398]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="ButtonsContainer/DiagonalContainer/Button2/TextureButton" unique_id=705321567]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Control" parent="ButtonsContainer/DiagonalContainer" unique_id=1491298210]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+action_id = "exit"
+
+[node name="TextureButton" type="TextureButton" parent="ButtonsContainer/DiagonalContainer/Button3" unique_id=610171167]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="ButtonsContainer/DiagonalContainer/Button3/TextureButton" unique_id=1059140920]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Exit Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsContainer" type="MarginContainer" parent="." unique_id=1191698454]
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 75
+
+[node name="CircularContainer" type="Container" parent="CreditsContainer" unique_id=91209180]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("8_5vw27")
+y_dev = 30.0
+x_dev = 24.0
+metadata/_custom_type_script = "uid://c3f7oqkhjogu5"
+
+[node name="Button1" type="Control" parent="CreditsContainer/CircularContainer" unique_id=2122909554]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+move_length = Vector2(0, 0)
+
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button1" unique_id=1433149875]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -15.0
+offset_right = 157.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_kek77")
+
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button1/TextureButton" unique_id=557979932]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Control" parent="CreditsContainer/CircularContainer" unique_id=1963974376]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+move_length = Vector2(0, 0)
+
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button2" unique_id=1095942084]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -15.0
+offset_right = 157.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_kek77")
+
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button2/TextureButton" unique_id=269160168]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button3" type="Control" parent="CreditsContainer/CircularContainer" unique_id=198485611]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+move_length = Vector2(0, 0)
+
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button3" unique_id=1095190328]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -15.0
+offset_right = 157.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_kek77")
+
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button3/TextureButton" unique_id=1735699849]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button4" type="Control" parent="CreditsContainer/CircularContainer" unique_id=805445858]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+move_length = Vector2(0, 0)
+
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button4" unique_id=751293305]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -15.0
+offset_right = 157.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_kek77")
+
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button4/TextureButton" unique_id=1537129776]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button5" type="Control" parent="CreditsContainer/CircularContainer" unique_id=1657478894]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+move_length = Vector2(0, 0)
+
+[node name="TextureButton" type="TextureButton" parent="CreditsContainer/CircularContainer/Button5" unique_id=1764194546]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -157.5
+offset_top = -15.0
+offset_right = 157.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_kek77")
+
+[node name="Label" type="Label" parent="CreditsContainer/CircularContainer/Button5/TextureButton" unique_id=1601908424]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackContainer" type="MarginContainer" parent="." unique_id=1455791816]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -35.0
+offset_right = 70.0
+offset_bottom = 35.0
+grow_vertical = 2
+theme_override_constants/margin_left = 36
+
+[node name="Button1" type="Control" parent="BackContainer" unique_id=1050102877]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("4_7mycd")
+action_id = "back"
+move_length = Vector2(0, 0)
+
+[node name="TextureButton" type="TextureButton" parent="BackContainer/Button1" unique_id=101525541]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 35.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(35, 35)
+texture_normal = ExtResource("10_4c57u")
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=848385977]
+stream = ExtResource("7_272bh")
+
+[connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="CreditsContainer/CircularContainer/Button1/TextureButton" to="CreditsContainer/CircularContainer/Button1" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="CreditsContainer/CircularContainer/Button1/TextureButton" to="CreditsContainer/CircularContainer/Button1" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="CreditsContainer/CircularContainer/Button1/TextureButton" to="CreditsContainer/CircularContainer/Button1" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="CreditsContainer/CircularContainer/Button1/TextureButton" to="CreditsContainer/CircularContainer/Button1" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="CreditsContainer/CircularContainer/Button2/TextureButton" to="CreditsContainer/CircularContainer/Button2" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="CreditsContainer/CircularContainer/Button2/TextureButton" to="CreditsContainer/CircularContainer/Button2" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="CreditsContainer/CircularContainer/Button2/TextureButton" to="CreditsContainer/CircularContainer/Button2" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="CreditsContainer/CircularContainer/Button2/TextureButton" to="CreditsContainer/CircularContainer/Button2" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="CreditsContainer/CircularContainer/Button3/TextureButton" to="CreditsContainer/CircularContainer/Button3" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="CreditsContainer/CircularContainer/Button3/TextureButton" to="CreditsContainer/CircularContainer/Button3" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="CreditsContainer/CircularContainer/Button3/TextureButton" to="CreditsContainer/CircularContainer/Button3" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="CreditsContainer/CircularContainer/Button3/TextureButton" to="CreditsContainer/CircularContainer/Button3" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="CreditsContainer/CircularContainer/Button4/TextureButton" to="CreditsContainer/CircularContainer/Button4" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="CreditsContainer/CircularContainer/Button4/TextureButton" to="CreditsContainer/CircularContainer/Button4" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="CreditsContainer/CircularContainer/Button4/TextureButton" to="CreditsContainer/CircularContainer/Button4" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="CreditsContainer/CircularContainer/Button4/TextureButton" to="CreditsContainer/CircularContainer/Button4" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="CreditsContainer/CircularContainer/Button5/TextureButton" to="CreditsContainer/CircularContainer/Button5" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="CreditsContainer/CircularContainer/Button5/TextureButton" to="CreditsContainer/CircularContainer/Button5" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="CreditsContainer/CircularContainer/Button5/TextureButton" to="CreditsContainer/CircularContainer/Button5" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="CreditsContainer/CircularContainer/Button5/TextureButton" to="CreditsContainer/CircularContainer/Button5" method="_on_texture_button_pressed"]
+[connection signal="focus_entered" from="BackContainer/Button1/TextureButton" to="BackContainer/Button1" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="BackContainer/Button1/TextureButton" to="BackContainer/Button1" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="BackContainer/Button1/TextureButton" to="BackContainer/Button1" method="_on_texture_button_mouse_entered"]
+[connection signal="pressed" from="BackContainer/Button1/TextureButton" to="BackContainer/Button1" method="_on_texture_button_pressed"]

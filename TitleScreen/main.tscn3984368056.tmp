@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://cfbb8xsl0payk"]
+
+[ext_resource type="Texture2D" uid="uid://drdgkeqod5om8" path="res://icon.svg" id="1_h2yge"]
+[ext_resource type="Script" uid="uid://dbxg2gmk1uvyr" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://c3wgfrhtq6vbq" path="res://button.png" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://d061ndpqwyuxg" path="res://diagonal_container.gd" id="3_272bh"]
+[ext_resource type="FontFile" uid="uid://e8ull3lvhllw" path="res://easvhs.ttf" id="4_lquwl"]
+[ext_resource type="AudioStream" uid="uid://g6ry07akvvvd" path="res://Assets/Minimalist1.wav" id="7_272bh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7mycd"]
+font = ExtResource("4_lquwl")
+font_size = 17
+font_color = Color(0.3647059, 0.1254902, 0.2784314, 1)
+
+[node name="main" type="Control" unique_id=1783092781]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lquwl")
+
+[node name="LogoContainer" type="MarginContainer" parent="." unique_id=77251829]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -112.0
+offset_bottom = 120.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+
+[node name="Logo" type="Control" parent="LogoContainer" unique_id=248550181]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LogoContainer/Logo" unique_id=1329524156]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("1_h2yge")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1268964612]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+offset_right = 200.0
+grow_vertical = 0
+theme_override_constants/margin_left = 88
+theme_override_constants/margin_top = 100
+
+[node name="DiagonalContainer" type="Container" parent="MarginContainer" unique_id=377744276]
+layout_mode = 2
+script = ExtResource("3_272bh")
+y_dev = 30.0
+x_dev = 24.0
+metadata/_custom_type_script = "uid://d061ndpqwyuxg"
+
+[node name="Button1" type="Control" parent="MarginContainer/DiagonalContainer" unique_id=1023113586]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/DiagonalContainer/Button1" unique_id=1574941582]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="MarginContainer/DiagonalContainer/Button1/TextureButton" unique_id=371819917]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Control" parent="MarginContainer/DiagonalContainer" unique_id=1648465033]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/DiagonalContainer/Button2" unique_id=863915033]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -20.0
+offset_right = 64.0
+offset_bottom = 12.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="MarginContainer/DiagonalContainer/Button2/TextureButton" unique_id=1226580844]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Start Game"
+label_settings = SubResource("LabelSettings_7mycd")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="." unique_id=848385977]
+stream = ExtResource("7_272bh")
+
+[connection signal="focus_entered" from="MarginContainer/DiagonalContainer/Button1/TextureButton" to="MarginContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/DiagonalContainer/Button1/TextureButton" to="MarginContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="MarginContainer/DiagonalContainer/Button1/TextureButton" to="MarginContainer/DiagonalContainer/Button1" method="_on_texture_button_mouse_entered"]
+[connection signal="focus_entered" from="MarginContainer/DiagonalContainer/Button2/TextureButton" to="MarginContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_entered"]
+[connection signal="focus_exited" from="MarginContainer/DiagonalContainer/Button2/TextureButton" to="MarginContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_exited"]
+[connection signal="mouse_entered" from="MarginContainer/DiagonalContainer/Button2/TextureButton" to="MarginContainer/DiagonalContainer/Button2" method="_on_texture_button_mouse_entered"]
