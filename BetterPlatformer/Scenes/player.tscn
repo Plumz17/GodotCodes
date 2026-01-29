@@ -174,7 +174,6 @@ animations = [{
 
 [sub_resource type="LabelSettings" id="LabelSettings_cvnsp"]
 line_spacing = -3.0
-font_size = 8
 
 [node name="player" type="CharacterBody2D" unique_id=667864553]
 script = ExtResource("1_onrkg")
@@ -190,15 +189,20 @@ animation = &"move"
 autoplay = "idle"
 frame_progress = 0.11532226
 
-[node name="DebugLabel" type="Label" parent="." unique_id=902184132]
-offset_left = -20.0
-offset_top = -32.0
-offset_right = 20.0
-offset_bottom = -9.0
-grow_horizontal = 2
-label_settings = SubResource("LabelSettings_cvnsp")
-horizontal_alignment = 1
-
 [node name="BufferTimer" type="Timer" parent="." unique_id=1398723664]
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=277171519]
+one_shot = true
+
+[node name="DebugLabel" type="Label" parent="." unique_id=902184132]
+anchors_preset = -1
+offset_left = -20.0
+offset_top = -64.0
+offset_right = 20.0
+offset_bottom = -41.0
+grow_horizontal = 2
+text = "test"
+label_settings = SubResource("LabelSettings_cvnsp")
+horizontal_alignment = 1
+
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
