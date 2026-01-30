@@ -27,6 +27,8 @@ var jump_buffer: bool = false
 # Current Gravity
 var current_gravity: float = 0
 
+var was_on_floor: bool = false
+
 func _ready() -> void:
 	buffer_timer.wait_time = jump_buffer_time
 	coyote_timer.wait_time = coyote_time
@@ -38,12 +40,14 @@ func _physics_process(delta: float) -> void:
 	handle_jump()
 	handle_movement()
 	handle_flip()
-	handle_anim()
 	
 	if velocity.y > terminal_velocity:
 		velocity.y = terminal_velocity
 	
 	move_and_slide()
+	handle_anim()
+	was_on_floor = is_on_floor()
+	
 
 func handle_fall(delta: float) -> void:
 	if !is_on_floor():
@@ -74,14 +78,18 @@ func handle_movement() -> void:
 	velocity.x = direction * speed
 
 func handle_anim() -> void:
+	if !was_on_floor and is_on_floor():
+		sprite.play("land")
+	
+	if sprite.is_playing() and sprite.animation == "land":
+		return
+	
 	if !is_on_floor():
-		if velocity.y < 0:
-			if sprite.animation != "jump":
-				sprite.play("jump")
-		else:
-			if sprite.animation != "fall":
-				sprite.play("fall")
-	elif !is_zero_approx(velocity.x):
+		if sprite.animation != "jump":
+			sprite.play("jump")
+		return
+	
+	if !is_zero_approx(velocity.x):
 		sprite.play("move")
 	else:
 		sprite.play("idle")
