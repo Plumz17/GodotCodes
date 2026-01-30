@@ -13,7 +13,7 @@ extends CharacterBody2D
 @export var coyote_time: float = 0.1
 
 @export_category("Variable Jump Height")
-@export var gravity_modifier: float = 2
+@export var gravity_modifier: float = 1.25
 
 @onready var debug_label: Label = $DebugLabel
 @onready var buffer_timer: Timer = $BufferTimer
@@ -74,7 +74,14 @@ func handle_movement() -> void:
 	velocity.x = direction * speed
 
 func handle_anim() -> void:
-	if !is_zero_approx(velocity.x):
+	if !is_on_floor():
+		if velocity.y < 0:
+			if sprite.animation != "jump":
+				sprite.play("jump")
+		else:
+			if sprite.animation != "fall":
+				sprite.play("fall")
+	elif !is_zero_approx(velocity.x):
 		sprite.play("move")
 	else:
 		sprite.play("idle")
