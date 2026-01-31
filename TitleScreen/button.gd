@@ -7,7 +7,7 @@ class_name GameButton
 @onready var texture_button: TextureButton = $TextureButton
 signal on_button_hover
 signal on_button_pressed(action_id)
-
+static var active_button: GameButton = null
 
 var original_scale: Vector2
 var original_position: Vector2
@@ -18,9 +18,19 @@ func _ready() -> void:
 	original_scale = texture_button.scale
 	original_position = texture_button.position
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func activate() -> void:
+	if active_button and active_button != self:
+		active_button.deactivate()
+	active_button = self
+	print(active_button.name)
+	tween_button_entered()
+	z_index = 1
+
+func deactivate() -> void:
+	if active_button == self:
+		active_button = null
+	tween_button_exitted()
+	z_index = 0
 
 func tween_button_entered() -> void:
 	if tween:
@@ -44,15 +54,17 @@ func tween_button_exitted() -> void:
 func grab_button_focus() -> void:
 	texture_button.grab_focus()
 
+func _on_texture_button_mouse_entered() -> void:
+	activate()
+
+func _on_texture_button_mouse_exited() -> void:
+	deactivate()
+
 func _on_texture_button_focus_entered() -> void:
-	tween_button_entered()
-	on_button_hover.emit()
+	activate()
 
 func _on_texture_button_focus_exited() -> void:
-	tween_button_exitted()
-
-func _on_texture_button_mouse_entered() -> void:
-	grab_button_focus()
+	deactivate()
 
 func _on_texture_button_pressed() -> void:
 	on_button_pressed.emit(action_id)

@@ -29,8 +29,8 @@ func _ready() -> void:
 	back.on_button_hover.connect(on_button_hover)
 	back.on_button_pressed.connect(on_button_pressed)
 	
-	if diagonal_container.get_child_count() > 0:
-		diagonal_container.get_child(0).grab_button_focus()
+	#if diagonal_container.get_child_count() > 0:
+		#diagonal_container.get_child(0).grab_button_focus()
 
 func on_button_hover() -> void:
 	pitch = min(pitch + pitch_step, pitch_max)
@@ -59,7 +59,7 @@ func load_credits(b: bool) -> void:
 	buttons_container.visible = !b
 	credits_container.visible = b
 	back_container.visible = b
-	if b and circular_container.get_child_count() > 0:
-		circular_container.get_child(0).grab_button_focus()
-	if !b and diagonal_container.get_child_count() > 0:
-		diagonal_container.get_child(0).grab_button_focus()
+	#if b and circular_container.get_child_count() > 0:
+		#circular_container.get_child(0).grab_button_focus()
+	#if !b and diagonal_container.get_child_count() > 0:
+		#diagonal_container.get_child(0).grab_button_focus()

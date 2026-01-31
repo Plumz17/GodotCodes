@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfbb8xsl0payk"]
 
-[ext_resource type="Texture2D" uid="uid://drdgkeqod5om8" path="res://icon.svg" id="1_h2yge"]
 [ext_resource type="Script" uid="uid://dbxg2gmk1uvyr" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Texture2D" uid="uid://dhpaa30ocarb8" path="res://Assets/splash.png" id="2_efxa6"]
 [ext_resource type="Texture2D" uid="uid://c3wgfrhtq6vbq" path="res://button.png" id="3_1bvp3"]
 [ext_resource type="Script" uid="uid://d061ndpqwyuxg" path="res://diagonal_container.gd" id="3_272bh"]
 [ext_resource type="Script" uid="uid://inyvjmd7p16a" path="res://button.gd" id="4_7mycd"]
@@ -34,8 +34,8 @@ anchor_right = 1.0
 offset_left = -112.0
 offset_bottom = 120.0
 grow_horizontal = 0
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
+theme_override_constants/margin_top = 135
+theme_override_constants/margin_right = 240
 
 [node name="Logo" type="Control" parent="LogoContainer" unique_id=248550181]
 layout_mode = 2
@@ -55,7 +55,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_h2yge")
+texture = ExtResource("2_efxa6")
 
 [node name="ButtonsContainer" type="MarginContainer" parent="." unique_id=1268964612]
 layout_mode = 1
@@ -65,7 +65,7 @@ anchor_bottom = 1.0
 offset_top = -200.0
 offset_right = 200.0
 grow_vertical = 0
-theme_override_constants/margin_left = 88
+theme_override_constants/margin_left = 70
 theme_override_constants/margin_top = 100
 
 [node name="DiagonalContainer" type="Container" parent="ButtonsContainer" unique_id=377744276]
@@ -463,14 +463,17 @@ stream = ExtResource("11_efxa6")
 [connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_entered"]
 [connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_focus_exited"]
 [connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button1/TextureButton" to="ButtonsContainer/DiagonalContainer/Button1" method="_on_texture_button_pressed"]
 [connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_entered"]
 [connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_focus_exited"]
 [connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button2/TextureButton" to="ButtonsContainer/DiagonalContainer/Button2" method="_on_texture_button_pressed"]
 [connection signal="focus_entered" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_focus_entered"]
 [connection signal="focus_exited" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_focus_exited"]
 [connection signal="mouse_entered" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_mouse_exited"]
 [connection signal="pressed" from="ButtonsContainer/DiagonalContainer/Button3/TextureButton" to="ButtonsContainer/DiagonalContainer/Button3" method="_on_texture_button_pressed"]
 [connection signal="focus_entered" from="CreditsContainer/CircularContainer/Button1/TextureButton" to="CreditsContainer/CircularContainer/Button1" method="_on_texture_button_focus_entered"]
 [connection signal="focus_exited" from="CreditsContainer/CircularContainer/Button1/TextureButton" to="CreditsContainer/CircularContainer/Button1" method="_on_texture_button_focus_exited"]
